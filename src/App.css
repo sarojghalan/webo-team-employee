@@ -3,7 +3,7 @@
   --heading_color: ;
   --white-color: #fff;
   --blue-color: #1e83f7;
-  --green-color: green;
+  --green-color: #20BC08;
   --yellow-color: #ffac1c;
   --grey-color: #f9f9f9;
   --back-color: #24252a;
@@ -14,9 +14,9 @@ p {
   margin: 0 !important;
   padding: 0 !important;
 }
-thead{
-border-top: 2px solid var(--grey-color);
-border-bottom: 2px solid var(--grey-color);
+thead {
+  border-top: 2px solid var(--grey-color);
+  border-bottom: 2px solid var(--grey-color);
 }
 .blue {
   background-color: var(--blue-color);
@@ -106,7 +106,7 @@ border-bottom: 2px solid var(--grey-color);
 .qr-img {
   text-align: start;
 }
-.table-data{
+.table-data {
   background-color: var(--white-color);
 }
 .edit-icon {
@@ -149,6 +149,7 @@ border-bottom: 2px solid var(--grey-color);
   font-size: 12px;
   border: 1px solid #c3c1bf;
   border-radius: 5px;
+  height: 30px;
 }
 .filter-btn {
 }
@@ -162,7 +163,7 @@ border-bottom: 2px solid var(--grey-color);
   font-size: 12px;
   padding: 3px 12px;
 }
-.add-icon{
+.add-icon {
   padding-right: 8px;
   font-size: 14px;
 }
@@ -185,4 +186,152 @@ border-bottom: 2px solid var(--grey-color);
   color: var(--white-color);
   font-size: 12px;
   border-radius: 5px;
+}
+.pagination-main {
+  text-align: center !important;
+}
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
+  border-radius: 5px !important;
+}
+.manage-team {
+  padding: 4px 16px;
+  background-color: var(--grey-color);
+}
+.manage-team p {
+  font-size: 12px;
+  opacity: 80%;
+  color: #656669;
+  font-weight: bold;
+}
+.manage-team p > span {
+  margin: 0px 8px;
+}
+.manage-team h3 {
+  margin: 12px 0px;
+  font-size: 28px;
+  font-weight: bold;
+}
+.team-form {
+  padding: 24px;
+  background-color: #fff;
+}
+.form-title {
+  text-align: end;
+  color: #24252a !important;
+  font-size: 20px !important;
+  padding-right: 46px !important ;
+}
+.team-basic {
+  display: flex;
+  gap: 20px;
+}
+.team-input {
+}
+.team-input label {
+  color: #24252a;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+.team-input input {
+  background: #f1f1f1 0% 0% no-repeat padding-box;
+  border: 1px solid #c3c1bf;
+  border-radius: 5px;
+  padding: 0px 8px;
+  width: 258px;
+  font-size: 14px;
+  height: 36px;
+}
+.team-input input:focus {
+  outline: none !important;
+}
+.team-member {
+}
+.team-member label {
+  color: #24252a;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+hr:not([size]) {
+  height: 3px;
+}
+.team-member-select {
+  padding: 8px;
+  margin-bottom: 26px;
+  background: var(---ffffff-base) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #c3c1bf;
+  border-radius: 5px;
+}
+.team-member-select select {
+  background: #f1f1f1 0% 0% no-repeat padding-box;
+  border: 1px solid #c3c1bf;
+  font-size: 14px;
+  width: 464px;
+  border-radius: 5px;
+  height: 36px;
+}
+.team-member-select select > option {
+}
+.d-flex input {
+  background: #f1f1f1 0% 0% no-repeat padding-box;
+  border: 1px solid #c3c1bf;
+  border-radius: 5px;
+  padding: 0px 8px;
+  width: 258px;
+  font-size: 14px;
+  height: 36px;
+}
+.d-flex input:focus {
+  outline: none !important;
+}
+.d-flex button {
+  background: #1e83f7 0% 0% no-repeat padding-box;
+  border: 1px solid #c3c1bf;
+  border-radius: 0px 4px 4px 0px;
+  color: var(--white-color) !important;
+  padding: 0px 16px;
+}
+.team-qr {
+}
+.team-qr img {
+  height: 140px;
+}
+.print-btn {
+  margin: 26px 8px 16px;
+}
+.print-btn button {
+  border: 1px solid #1e83f7 !important;
+  border-radius: 5px !important;
+  background-color: var(--white-color) !important;
+  color: var(--blue-color) !important;
+  padding: 3px 44px !important;
+  height: 32px !important;
+}
+.print-icon{
+  margin-right: 8px;
+}
+.download-btn {
+  margin-left: 8px;
+}
+.download-btn button {
+  border: 1px solid var(--green-color) !important;
+  border-radius: 5px !important;
+  background-color: var(--white-color) !important;
+  color: var(--green-color) !important;
+  padding: 3px 26px !important;
+  height: 32px !important;
+}
+.save{
+  background-color: var(--white-color);
+  margin: 16px 0px;
+  padding: 11px;
+}
+.save button{
+  height: 36px;
+  background: #F7921E 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  padding: 0px 36px;
+  font-size: 14px;
+  color: var(--white-color);
+  border: none ;
 }

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import NavigationBar from "../components/NavigationBar/NavigationBar";
 import qrCode from "../Assests/qr.png";
 import TeamTable from "../components/Team/TeamTable";
 import EmployeeTable from "../components/Employee/EmployeeTable";
 import { animated, useSpring } from "react-spring";
-import SubBar from "../components/SubBar/SubBar";
 import group from "../Assests/group.svg";
 
 function Number({ n }) {
@@ -27,7 +25,6 @@ const Home = () => {
   return (
     <>
       <div className="home">
-        <NavigationBar />
         <div className="container-fluid">
           <div className="manage-user">
             <h3>Manage Users</h3>
@@ -92,7 +89,6 @@ const Home = () => {
           </div>
           <hr />
           <div className="table-data">
-          <SubBar />
             {tabToggler ? <EmployeeTable /> : <TeamTable />}
           </div>
         </div>

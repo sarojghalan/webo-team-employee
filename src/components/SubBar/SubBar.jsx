@@ -1,6 +1,6 @@
 import React from "react";
 
-const SubBar = () => {
+const SubBar = ({title , filterMode=false}) => {
   return (
     <>
       <div className="sub-bar">
@@ -9,7 +9,7 @@ const SubBar = () => {
             <div className="search-bar">
               <input type="text" placeholder="Search item ..."/>
               <span className="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-              <div className="filter-btn">
+              {filterMode && <div className="filter-btn">
                 <button>
                   {" "}
                   <span className="filter-icon">
@@ -17,13 +17,13 @@ const SubBar = () => {
                   </span>
                   Filter
                 </button>
-              </div>
+              </div> }
             </div>
           </div>
           <div className="col-md-6">
             <div className="add-btn">
               <button><span className="add-icon"><i class="fa-solid fa-plus"></i></span>
-              Add Employee</button>
+              Add {title}</button>
             </div>
           </div>
         </div>
