@@ -1,7 +1,8 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import qrCode from "../../Assests/qr.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
+import {useLocation} from 'react-router-dom';
 
 const EmployeeForm = () => {
   const [name,setName] = useState("");
@@ -14,7 +15,25 @@ const EmployeeForm = () => {
   const [team,setTeam] = useState("");
   const [hours,setHours] = useState("");
   const navigate = useNavigate();
+  const params = useParams();
+
   const {enqueueSnackbar} = useSnackbar();
+  console.log("startTime  : ",startTime)
+  console.log("endTime  : ",endTime)
+  const location = useLocation();
+  useEffect(()=>{
+    if(location.state){
+      setName("David ")
+      setSurname("Doe")
+      setAddress("Washington");
+      setEmail("daviddoe@gmail.com")
+      setJobPosition("React Developer");
+      setTeam("team1")
+      setStartTime("02:46");
+    setEndTime("10:46");
+    setHours("20")
+    }
+  },[location.state])
 
   const enterHandler = (e) => {
     e.preventDefault();

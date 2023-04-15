@@ -3,8 +3,14 @@ import qrCode from "../../Assests/qr.png";
 import SubBar from "../SubBar/SubBar";
 import BasicPagination from "../Pagination/Pagination";
 import ProfileImg from "../../Assests/profile.jpg";
+import { useNavigate } from "react-router-dom";
 
 const EmployeeTable = () => {
+  const navigate = useNavigate();
+  const navigateHandler = (e) => {
+    e.preventDefault();
+    navigate('/add_employee',{state:true})
+  }
   return (
     <>
       <SubBar title="Employee" filterMode={false} />
@@ -41,7 +47,7 @@ const EmployeeTable = () => {
                     >
                       <i class="fa-solid fa-eye"></i>
                     </span>
-                    <span className="edit-icon">
+                    <span className="edit-icon" onClick={navigateHandler}>
                       <i class="fa-solid fa-pen-to-square"></i>
                     </span>
                     <span
@@ -65,6 +71,7 @@ const EmployeeTable = () => {
                               <strong>Delete Employee</strong>
                             </h1>
                             <button
+                            id="close"
                               type="button"
                               class="btn-close"
                               data-bs-dismiss="modal"
@@ -131,12 +138,16 @@ const EmployeeTable = () => {
               <div className="view-basic">
                 <div className="row">
                   <div className="col-md-6">
-                    <p>Designation</p>
-                    <p>Fabricator</p>
+                    <div className="view-info">
+                      <p>Designation</p>
+                      <p>Fabricator</p>
+                    </div>
                   </div>
                   <div className="col-md-6">
-                    <p>Contact</p>
-                    <p>+977 9898656525</p>
+                    <div className="view-info">
+                      <p>Contact</p>
+                      <p>+977 9898656525</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -144,26 +155,35 @@ const EmployeeTable = () => {
               <div className="view-basic">
                 <div className="row">
                   <div className="col-md-6">
-                    <p>Start Time</p>
-                    <p>15/04/2023</p>
+                    <div className="view-info">
+                      <p>Start Time</p>
+                      <p>15/04/2023</p>
+                    </div>
                   </div>
                   <div className="col-md-6">
-                    <p>Role</p>
-                    <p>staff</p>
+                    <div className="view-info">
+                      <p>Role</p>
+                      <p>staff</p>
+                    </div>
                   </div>
                   <div className="col-md-6">
-                    <p>Billable Staff</p>
-                    <p>User is Billable</p>
+                    <div className="view-info">
+                      <p>Billable Staff</p>
+                      <p>User is Billable</p>
+                    </div>
                   </div>
                   <div className="col-md-6">
-                    <p>Billable Hours</p>
-                    <p>40 Billable Hours</p>
+                    <div className="view-info">
+                      <p>Billable Hours</p>
+                      <p>40 Billable Hours</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer">
-              <p>Edit Profile</p>
+              <p onClick={navigateHandler} data-bs-dismiss="modal"><span><i class="fa-solid fa-pen-to-square"></i></span>
+              Edit Profile</p>
             </div>
           </div>
         </div>

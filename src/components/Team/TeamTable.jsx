@@ -2,8 +2,14 @@ import React from "react";
 import qrCode from "../../Assests/qr.png";
 import SubBar from "../SubBar/SubBar";
 import BasicPagination from "../Pagination/Pagination";
+import { useNavigate } from "react-router-dom";
 
 const TeamTable = () => {
+  const navigate = useNavigate();
+  const editHandler = (e) => {
+    e.preventDefault();
+    navigate('/add_team',{state:true})
+  }
   return (
     <>
       <SubBar title="Team" filterMode={true} />
@@ -31,7 +37,7 @@ const TeamTable = () => {
                 <td> 2700 </td>
                 <td>
                   <div className="d-flex gap-2">
-                    <span className="edit-icon">
+                    <span className="edit-icon" onClick={editHandler}>
                       <i class="fa-solid fa-pen-to-square"></i>
                     </span>
                     <span

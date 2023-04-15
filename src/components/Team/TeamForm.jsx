@@ -1,14 +1,24 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import qrCode from "../../Assests/qr.png";
 import { useSnackbar } from "notistack";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 const TeamForm = () => {
   const [teamName,setTeamName] = useState("");
   const [password,setPassword] = useState("");
   const [member , setMember] = useState("");
   const [hours,setHours] = useState("");
+  const location = useLocation();
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(location.state){
+      setTeamName("Team 1");
+      setPassword("password");
+      setMember("member1");
+      setHours("20");
+    }
+  },[location.state])
   const saveHandler = (e) => {
     e.preventDefault();
     if(teamName === "" || password === "" || member === "" || hours === ""){

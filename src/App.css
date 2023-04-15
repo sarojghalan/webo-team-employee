@@ -413,20 +413,47 @@ background: none !important;
 border: none !important;
 }
 .view-image{
-
+  text-align: center;
 }
 .view-image img{
-
+  height: 120px !important;
+  border-radius: 50%;
 }
 .view-image h3{
-
+  font-size: 18px;
+  margin-top: 12px;
 }
 .view-image p{
-
+  font-size: 12px;
+  opacity: 80%;
 }
 .tag{
-
+  background: #1E83F7 0% 0% no-repeat padding-box;
+border-radius: 18px;
+display: inline-block;
+font-size: 14px;
+color: var(--white-color);
+padding: 4px 12px !important;
 }
 .view-basic{
-  
+
+}
+.view-info p{
+  font-size: 14px;
+}
+.modal-footer{
+  display: block !important;
+  background-color: var(--yellow-color);
+  margin: 16px 12px;
+  padding: 4px 0px !important;
+  color: var(--white-color);
+  text-align: center;
+  border-radius: 5px;
+}
+.modal-footer p>span{
+  margin-right: 12px;
+}
+.modal-footer p{
+  font-size: 14px;
+  font-family: var(--font-fam1);
 }
