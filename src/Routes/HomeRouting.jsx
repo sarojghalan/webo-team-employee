@@ -10,6 +10,6 @@ const HomeRouting = () => {
         </Routes>
     </>
   )
-}
+} 
 
 export default HomeRouting

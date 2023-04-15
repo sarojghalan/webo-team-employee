@@ -3,6 +3,8 @@ import qrCode from '../../Assests/qr.png';
 
 const EmployeeTable = () => {
   return (
+    <>
+    
     <div class="table-responsive">
       <div class="table-wrapper">
         <table class="table table-striped table-hover">
@@ -47,6 +49,8 @@ const EmployeeTable = () => {
         </table>
       </div>
     </div>
+    </>
+
   )
 }
 

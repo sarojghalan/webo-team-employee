@@ -3,6 +3,19 @@ import NavigationBar from "../components/NavigationBar/NavigationBar";
 import qrCode from "../Assests/qr.png";
 import TeamTable from "../components/Team/TeamTable";
 import EmployeeTable from "../components/Employee/EmployeeTable";
+import { animated, useSpring } from "react-spring";
+import SubBar from "../components/SubBar/SubBar";
+import group from "../Assests/group.svg";
+
+function Number({ n }) {
+  const { number } = useSpring({
+    from: { number: 0 },
+    number: n,
+    delay: 200,
+    config: { mass: 1, tension: 20, friction: 10 },
+  });
+  return <animated.span>{number.to((n) => n.toFixed(0))}</animated.span>;
+}
 
 const Home = () => {
   const [tabToggler, setTabToggler] = useState(false);
@@ -10,6 +23,7 @@ const Home = () => {
     e.preventDefault();
     setTabToggler(!tabToggler);
   };
+
   return (
     <>
       <div className="home">
@@ -23,14 +37,14 @@ const Home = () => {
                   <div className="col-md-6">
                     <div className="card-total-left">
                       <p>Teams</p>
-                      <h4>23</h4>
+                      <h4>
+                        <Number n={23} />
+                      </h4>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="card-total-right">
-                      <span>
-                        <i class="fa-solid fa-user-plus"></i>{" "}
-                      </span>
+                      <img src={group} alt="group" />
                     </div>
                   </div>
                 </div>
@@ -40,14 +54,14 @@ const Home = () => {
                   <div className="col-md-6">
                     <div className="card-total-left">
                       <p>Employee</p>
-                      <h4>23</h4>
+                      <h4>
+                        <Number n={23} />
+                      </h4>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="card-total-right">
-                      <span>
-                        <i class="fa-solid fa-user-plus"></i>{" "}
-                      </span>
+                      <img src={group} alt="group" />
                     </div>
                   </div>
                 </div>
@@ -76,7 +90,9 @@ const Home = () => {
               )}
             </div>
           </div>
+          <hr />
           <div className="table-data">
+          <SubBar />
             {tabToggler ? <EmployeeTable /> : <TeamTable />}
           </div>
         </div>
