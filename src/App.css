@@ -397,3 +397,36 @@ hr:not([size]) {
   color: var(--white-color);
   border: none ;
 }
+.btn-confirm{
+  background-color: red !important;
+  border: none !important;
+  padding: 4px 16px !important;
+}
+.btn-end{
+  background-color: var(--blue-color) !important;
+  border: none !important;
+  padding: 4px 16px !important;
+}
+.btn-close{
+color: red !important;
+background: none !important;
+border: none !important;
+}
+.view-image{
+
+}
+.view-image img{
+
+}
+.view-image h3{
+
+}
+.view-image p{
+
+}
+.tag{
+
+}
+.view-basic{
+  
+}

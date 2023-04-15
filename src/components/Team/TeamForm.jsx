@@ -1,7 +1,26 @@
-import React from "react";
+import React,{useState} from "react";
 import qrCode from "../../Assests/qr.png";
+import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
 const TeamForm = () => {
+  const [teamName,setTeamName] = useState("");
+  const [password,setPassword] = useState("");
+  const [member , setMember] = useState("");
+  const [hours,setHours] = useState("");
+  const { enqueueSnackbar } = useSnackbar();
+  const navigate = useNavigate();
+  const saveHandler = (e) => {
+    e.preventDefault();
+    if(teamName === "" || password === "" || member === "" || hours === ""){
+      enqueueSnackbar("Empty Field Detected !",{variant:"warning"});
+    }else{
+      enqueueSnackbar("Team has been successfully created . ",{variant:"success"});
+      navigate('/')
+    }
+  }
+  console.log("fasle : ",member)
   return (
+
     <>
       <div className="manage-team">
         <p>
@@ -26,12 +45,12 @@ const TeamForm = () => {
                 <div className="team-input">
                   <label htmlFor="">Team Name</label>
                   <br />
-                  <input type="text" placeholder="Enter Team Name " />
+                  <input type="text" placeholder="Enter Team Name " value={teamName} onChange={(e)=>setTeamName(e.target.value)} />
                 </div>
                 <div className="team-input">
                   <label htmlFor="">Team Password</label>
                   <br />
-                  <input type="text" placeholder="Team Password " />
+                  <input type="text" placeholder="Team Password " value={password} onChange={(e)=>setPassword(e.target.value)} />
                 </div>
               </div>
               <hr className="break"/>
@@ -44,7 +63,7 @@ const TeamForm = () => {
                 <label htmlFor="">Team Members</label>
                 <br />
                 <div className="team-member-select">
-                  <select id="member">
+                  <select id="member" value={member} onChange={(e)=>setMember(e.target.value)}>
                     <option value="member1">Member 1</option>
                     <option value="member2">Member 2</option>
                     <option value="member3">Member 3</option>
@@ -53,7 +72,7 @@ const TeamForm = () => {
                 </div>
                 <label htmlFor="">Billable Hours</label>
                 <div className="d-flex">
-                  <input type="text" placeholder="Enter Billable Hours" />
+                  <input type="text" placeholder="Enter Billable Hours" value={hours} onChange={(e)=>setHours(e.target.value)} />
                   <button>Hours</button>
                 </div>
                 <hr className="break" />
@@ -90,7 +109,7 @@ const TeamForm = () => {
           </div>
         </div>
         <div className="save">
-          <button>Save</button>
+          <button onClick={saveHandler}>Save</button>
         </div>
       </div>
     </>

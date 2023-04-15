@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import qrCode from "../Assests/qr.png";
+import React, { useState,useEffect } from "react";
+import qrCode from "../Assests/qr.png"; 
 import TeamTable from "../components/Team/TeamTable";
 import EmployeeTable from "../components/Employee/EmployeeTable";
 import { animated, useSpring } from "react-spring";
 import group from "../Assests/group.svg";
+import { useLocation } from "react-router-dom";
 
 function Number({ n }) {
   const { number } = useSpring({
@@ -17,6 +18,13 @@ function Number({ n }) {
 
 const Home = () => {
   const [tabToggler, setTabToggler] = useState(false);
+  const location = useLocation();
+
+  useEffect(()=>{
+    if(location.state){
+      setTabToggler(true);
+    }
+  },[location.state])
   const togglerHandler = (e) => {
     e.preventDefault();
     setTabToggler(!tabToggler);

@@ -66,12 +66,12 @@ const TeamTable = () => {
                             from the list ?
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" class="btn-confirm">
                               Confirm
                             </button>
                             <button
                               type="button"
-                              class="btn btn-secondary"
+                              class="btn-end"
                               data-bs-dismiss="modal"
                             >
                               Close
