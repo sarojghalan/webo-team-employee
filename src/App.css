@@ -214,6 +214,24 @@ thead {
 .team-form {
   padding: 24px;
   background-color: #fff;
+  height: 497px;
+  overflow-y:scroll ;
+}
+::-webkit-scrollbar {
+  width: 4px; /* Set the width of the scrollbar */
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Set the background color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Set the background color of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Set the background color of the handle on hover */
 }
 .form-title {
   text-align: end;
@@ -224,8 +242,11 @@ thead {
 .team-basic {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .team-input {
+  flex-basis: calc(33.33% - 10px);
+  margin-bottom: 12px;
 }
 .team-input label {
   color: #24252a;
@@ -241,10 +262,50 @@ thead {
   font-size: 14px;
   height: 36px;
 }
+.team-input select {
+  background: #f1f1f1 0% 0% no-repeat padding-box;
+  border: 1px solid #c3c1bf;
+  border-radius: 5px;
+  padding: 0px 8px;
+  width: 258px;
+  font-size: 14px;
+  height: 36px;
+}
 .team-input input:focus {
   outline: none !important;
 }
 .team-member {
+}
+.input-flex{
+  display: flex;
+}
+.input-flex button{
+  border: none!important;
+  background: #C3C1BF 0% 0% no-repeat padding-box;
+}
+.bill-check{
+  display: flex;
+  gap: 0px;
+}
+.bill-check p{
+
+}
+.bill-check input{
+  height: 12px;
+  width: 12px;
+  margin-top: 4px;
+  margin-right: 6px;
+}
+.bill-check input:checked{
+ background-color: var(--black-color) !important;
+}
+.enter-btn{
+  margin-left: 26px !important;
+  background-color: var(--blue-color) !important;
+  border: none !important;
+  color: var(--white-color) !important;
+  padding: 0px 26px;
+  border-radius: 5px;
 }
 .team-member label {
   color: #24252a;
