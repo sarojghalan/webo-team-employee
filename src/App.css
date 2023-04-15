@@ -42,6 +42,7 @@ thead {
 }
 .navigation {
   padding: 8px 0px;
+  cursor: pointer;
   background-color: var(--white-color);
   box-shadow: 0px 5px 15px #1201030f;
 }

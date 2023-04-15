@@ -9,7 +9,7 @@ const HomeRouting = () => {
     <>
         <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/add_teams' element={<TeamForm />} />
+            <Route path='/add_team' element={<TeamForm />} />
             <Route path='/add_employee' element={<EmployeeForm />} />
         </Routes>
     </>

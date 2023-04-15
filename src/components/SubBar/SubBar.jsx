@@ -1,6 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const SubBar = ({title , filterMode=false}) => {
+
+  const navigate = useNavigate()
+  const navigateHandler = (e) => {
+    e.preventDefault();
+    if(!filterMode){
+      navigate('/add_employee')
+    }
+    if(filterMode){
+      navigate('/add_team')
+    }
+  }
+
   return (
     <>
       <div className="sub-bar">
@@ -22,7 +35,7 @@ const SubBar = ({title , filterMode=false}) => {
           </div>
           <div className="col-md-6">
             <div className="add-btn">
-              <button><span className="add-icon"><i class="fa-solid fa-plus"></i></span>
+              <button onClick={(e)=>navigateHandler(e)}><span className="add-icon"><i class="fa-solid fa-plus"></i></span>
               Add {title}</button>
             </div>
           </div>
